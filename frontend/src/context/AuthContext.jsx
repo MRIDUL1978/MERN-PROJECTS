@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect, useContext, createContext } from "react";
-import { VITE_API_URL } from "../env";
 
 export const AuthContext = createContext();
 
@@ -13,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     const checkAuth = async () => {
       try {
         const response = await fetch(
-          `${VITE_API_URL}/api/auth/check-sessions`,
+          `${import.meta.env.VITE_API_URL}/api/auth/check-sessions`,
           {
             method: "GET",
             credentials: "include",
