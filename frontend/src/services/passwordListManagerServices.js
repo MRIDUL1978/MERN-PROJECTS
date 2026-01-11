@@ -1,7 +1,6 @@
-import { VITE_API_URL } from "../env";
 
 export const addPassword = async (siteName, password) => {
-  const response = await fetch(`${VITE_API_URL}/api/passwordList`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/passwordList`, {
     method: "POST",
     credentials: "include",
     headers: {
@@ -14,7 +13,7 @@ export const addPassword = async (siteName, password) => {
 };
 
 export const getAllPasswords = async () => {
-  const response = await fetch(`${VITE_API_URL}/api/passwordList`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/passwordList`, {
     method: "GET",
     credentials: "include",
   });
@@ -23,7 +22,7 @@ export const getAllPasswords = async () => {
 };
 
 export const updatePassword = async (id, siteName, password) => {
-  const response = await fetch(`${VITE_API_URL}/api/passwordList/${id}`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/passwordList/${id}`, {
     method: "PUT",
     credentials: "include",
     headers: {
@@ -36,7 +35,7 @@ export const updatePassword = async (id, siteName, password) => {
 };
 
 export const deletePassword = async (id) => {
-  await fetch(`${VITE_API_URL}/api/passwordList/${id}`, {
+  await fetch(`${import.meta.env.VITE_API_URL}/api/passwordList/${id}`, {
     method: "DELETE",
     credentials: "include",
   });

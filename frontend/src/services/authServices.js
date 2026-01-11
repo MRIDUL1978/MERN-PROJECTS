@@ -1,7 +1,6 @@
-import { VITE_API_URL } from "../env";
 
 export const signUp = async (userName, email, password, confirmPassword) => {
-  const response = await fetch(`${VITE_API_URL}/api/auth/signUp`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/signUp`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -17,7 +16,7 @@ export const signUp = async (userName, email, password, confirmPassword) => {
 };
 
 export const signIn = async (email, password) => {
-  const response = await fetch(`${VITE_API_URL}/api/auth/signIn`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/signIn`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
